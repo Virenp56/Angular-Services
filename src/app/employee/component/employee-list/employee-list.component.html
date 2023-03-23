@@ -1,0 +1,25 @@
+<div class="d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center w-50 mt-5">
+        <button type="button" class="btn btn-primary" routerLink="/employee/add-employee">+ Add Employee</button>
+    </div>
+    <table class="table table-striped my-5 w-50">
+        <thead class="text-light bg-dark">
+            <tr>
+                <th scope="col" *ngFor="let item of header">{{item}}</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td scope="col" #id>{{item.id}}</td>
+                <td scope="col">{{item.lastname}}</td>
+                <td scope="col">{{item.firstname}}</td>
+                <td scope="col">{{item.technology}}</td>
+                <td scope="col">{{item.email}}</td>
+                <td scope="col">{{item.address}}</td>
+                <td scope="col"><button type="button" class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
