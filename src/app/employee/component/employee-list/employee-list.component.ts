@@ -5,18 +5,20 @@ import { EmployeeService } from '../../services/employee.service';
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css'],
-  viewProviders: [EmployeeService]
+  viewProviders: [EmployeeService] //service
 })
 export class EmployeeListComponent implements OnInit {
   public data: any;
   public header: any;
   public localData: any;
   constructor(private empService: EmployeeService) { }
+
   ngOnInit(): void {
-    this.data = this.empService.data;
+    this.data = this.empService.getData();
     this.header = Object.keys(this.data[0])
-
-
   }
-  delete(data: any) { this.empService.delete(data) }
+  delete(id: any) {
+    this.empService.delete(id);
+    this.data = this.empService.getData();
+  }
 }

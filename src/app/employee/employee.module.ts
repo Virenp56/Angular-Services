@@ -16,6 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     EmployeeRoutingModule,
     ReactiveFormsModule
-  ],
+  ]
 })
 export class EmployeeModule { }
